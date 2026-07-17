@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Upload Config - Mr Nonchalant Hub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<section class="hero">
+
+<h2>UPLOAD CONFIG</h2>
+
+<p>Share your VPN configuration with the community</p>
+
+
+<div class="search">
+<input id="name" placeholder="Config Name">
+</div>
+
+
+<div class="search">
+<input id="type" placeholder="Tunnel Type">
+</div>
+
+
+<div class="search">
+<input id="network" placeholder="Network (MTN, Vodacom, Telkom)">
+</div>
+
+
+<div class="search">
+<input id="description" placeholder="Description">
+</div>
+
+
+<div class="search">
+<input id="link" placeholder="Download Link">
+</div>
+
+
+<button onclick="uploadConfig()">
+UPLOAD
+</button>
+
+
+</section>
+
+
+<script type="module">
+
+import { db } from "./firebase.js";
+
+import {
+collection,
+addDoc,
+serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+
+window.uploadConfig = async function(){
+
+
+await addDoc(collection(db,"configs"),{
+
+name: document.getElementById("name").value,
+
+type: document.getElementById("type").value,
+
+network: document.getElementById("network").value,
+
+description: document.getElementById("description").value,
+
+link: document.getElementById("link").value,
+
+date: serverTimestamp()
+
+});
+
+
+alert("Config uploaded successfully!");
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
