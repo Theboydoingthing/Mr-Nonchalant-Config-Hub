@@ -1,85 +1,141 @@
-// Mr Nonchalant Config Hub
+import { db } from "./firebase.js";
 
-let configs = JSON.parse(localStorage.getItem("configs")) || [];
+import {
+collection,
+getDocs,
+query,
+orderBy
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
 
 const configList = document.getElementById("config-list");
 const searchInput = document.querySelector(".search input");
 
 
-function displayConfigs(items){
-
-    configList.innerHTML = "";
+let configs = [];
 
 
-    if(items.length === 0){
+// Load configs from Firebase
 
-        configList.innerHTML = `
-        <div class="empty">
+async function loadConfigs(){
 
-        <i class="fas fa-folder-open"></i>
-
-        <h3>No Configurations Uploaded Yet</h3>
-
-        <p>
-        Upload configurations from the admin panel.
-        </p>
-
-        </div>
-        `;
-
-        return;
-    }
+const q = query(
+collection(db,"configs"),
+orderBy("date","desc")
+);
 
 
-    items.forEach(config => {
+const snapshot = await getDocs(q);
 
 
-        let card = document.createElement("div");
-
-        card.className = "card";
+configs = [];
 
 
-        card.innerHTML = `
+snapshot.forEach((doc)=>{
 
-        <i class="fas fa-file-shield"></i>
+configs.push(doc.data());
 
-        <h3>${config.name}</h3>
-
-        <p>
-        <b>Type:</b> ${config.type}
-        </p>
-
-        <p>
-        ${config.description}
-        </p>
-
-        <a href="${config.link}" target="_blank">
-        DOWNLOAD CONFIG
-        </a>
-
-        `;
+});
 
 
-        configList.appendChild(card);
-
-
-    });
+displayConfigs(configs);
 
 }
 
 
 
+// Display configs
+
+function displayConfigs(items){
+
+configList.innerHTML="";
+
+
+if(items.length === 0){
+
+configList.innerHTML=`
+
+<div class="empty">
+
+<i class="fas fa-folder-open"></i>
+
+<h3>No Configurations Uploaded Yet</h3>
+
+<p>
+Be the first to upload a configuration.
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+
+items.forEach(config=>{
+
+
+let card=document.createElement("div");
+
+
+card.className="card";
+
+
+card.innerHTML=`
+
+<i class="fas fa-shield-alt"></i>
+
+<h3>${config.name}</h3>
+
+<p>
+<b>Type:</b> ${config.type}
+</p>
+
+<p>
+<b>Network:</b> ${config.network}
+</p>
+
+<p>
+${config.description}
+</p>
+
+
+<a href="${config.link}" target="_blank">
+DOWNLOAD
+</a>
+
+
+`;
+
+
+configList.appendChild(card);
+
+
+});
+
+
+}
+
+
+
+// Search
+
 searchInput.addEventListener("input",()=>{
 
 
-let search = searchInput.value.toLowerCase();
+let value=searchInput.value.toLowerCase();
 
 
-let filtered = configs.filter(config =>
+let filtered=configs.filter(config=>
 
-config.name.toLowerCase().includes(search) ||
+config.name.toLowerCase().includes(value) ||
 
-config.type.toLowerCase().includes(search)
+config.type.toLowerCase().includes(value) ||
+
+config.network.toLowerCase().includes(value)
 
 );
 
@@ -91,4 +147,4 @@ displayConfigs(filtered);
 
 
 
-displayConfigs(configs);
+loadConfigs();
