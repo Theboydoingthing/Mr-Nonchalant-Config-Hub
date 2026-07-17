@@ -4,47 +4,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mr Nonchalant Config Hub</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>⚡ Mr Nonchalant Config Hub ⚡</h1>
-    <p>Daily VPN Configurations & Freenet Plugs</p>
-</header>
+<div class="overlay"></div>
 
-<div class="top-bar">
-    <input type="text" id="search" placeholder="🔍 Search configs...">
+<nav>
+
+<div class="logo">
+MR NONCHALANT
+<span>CONFIG HUB</span>
 </div>
 
-<div id="config-container">
+<a href="https://whatsapp.com/channel/0029VbBwzzgCcW4h58fHBs3B" class="join">
+Join Channel
+</a>
 
-<div class="config-card">
-<h2>MTN Unlimited</h2>
-<p><strong>Network:</strong> MTN</p>
-<p><strong>Date:</strong> 17 July 2026</p>
-<a href="#" class="download-btn">Download</a>
+</nav>
+
+<section class="hero">
+
+<h1>Daily VPN Configurations</h1>
+
+<p>
+Download the latest VPN configurations uploaded by
+Mr Nonchalant.
+</p>
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search configurations..."
+>
+
 </div>
 
-<div class="config-card">
-<h2>Vodacom Unlimited</h2>
-<p><strong>Network:</strong> Vodacom</p>
-<p><strong>Date:</strong> 17 July 2026</p>
-<a href="#" class="download-btn">Download</a>
-</div>
+</section>
 
-</div>
+<section class="categories">
 
-<div class="buttons">
-<a href="login.html">🔐 Admin Login</a>
-<a href="https://whatsapp.com/channel/0029VbBwzzgCcW4h58fHBs3B">📢 WhatsApp Channel</a>
-</div>
+<a href="tls.html" class="category">
+<i class="fa-solid fa-shield-halved"></i>
+TLS Tunnel
+</a>
+
+<a href="httpcustom.html" class="category">
+<i class="fa-solid fa-globe"></i>
+HTTP Custom
+</a>
+
+<a href="maya.html" class="category">
+<i class="fa-solid fa-satellite-dish"></i>
+Maya Tunnel
+</a>
+
+<a href="npv.html" class="category">
+<i class="fa-solid fa-bolt"></i>
+NPV Tunnel
+</a>
+
+<a href="ha.html" class="category">
+<i class="fa-solid fa-wifi"></i>
+HA Tunnel
+</a>
+
+<a href="injector.html" class="category">
+<i class="fa-solid fa-download"></i>
+HTTP Injector
+</a>
+
+</section>
+
+<section class="empty">
+
+<h2>No Configurations Yet</h2>
+
+<p>
+Configurations will appear here after the admin uploads them.
+</p>
+
+</section>
 
 <footer>
+
 © 2026 Mr Nonchalant Tech
+
 </footer>
 
-<script type="module" src="app.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
