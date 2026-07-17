@@ -3,46 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mr Nonchalant Config Hub</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-<div class="overlay"></div>
+<div class="background"></div>
 
-<nav>
+<header>
 
 <div class="logo">
-MR NONCHALANT
+<h1>MR NONCHALANT</h1>
 <span>CONFIG HUB</span>
 </div>
 
-<a href="https://whatsapp.com/channel/0029VbBwzzgCcW4h58fHBs3B" class="join">
-Join Channel
-</a>
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#">TLS Tunnel</a>
+
+<a href="#">HTTP Custom</a>
+
+<a href="#">Maya Tunnel</a>
+
+<a href="#">NPV Tunnel</a>
+
+<a href="#">HA Tunnel</a>
+
+<a href="#">HTTP Injector</a>
 
 </nav>
 
+</header>
+
 <section class="hero">
 
-<h1>Daily VPN Configurations</h1>
+<h2>Premium VPN Configurations</h2>
 
 <p>
-Download the latest VPN configurations uploaded by
+Download secure VPN configurations uploaded by
 Mr Nonchalant.
 </p>
 
-<div class="search-box">
-
-<i class="fa-solid fa-magnifying-glass"></i>
+<div class="search">
 
 <input
 type="text"
-placeholder="Search configurations..."
->
+placeholder="Search configurations...">
+
+<button>
+
+<i class="fas fa-search"></i>
+
+</button>
 
 </div>
 
@@ -50,55 +74,69 @@ placeholder="Search configurations..."
 
 <section class="categories">
 
-<a href="tls.html" class="category">
-<i class="fa-solid fa-shield-halved"></i>
-TLS Tunnel
-</a>
+<div class="card">
+<i class="fas fa-shield-alt"></i>
+<h3>TLS Tunnel</h3>
+</div>
 
-<a href="httpcustom.html" class="category">
-<i class="fa-solid fa-globe"></i>
-HTTP Custom
-</a>
+<div class="card">
+<i class="fas fa-globe"></i>
+<h3>HTTP Custom</h3>
+</div>
 
-<a href="maya.html" class="category">
-<i class="fa-solid fa-satellite-dish"></i>
-Maya Tunnel
-</a>
+<div class="card">
+<i class="fas fa-bolt"></i>
+<h3>Maya Tunnel</h3>
+</div>
 
-<a href="npv.html" class="category">
-<i class="fa-solid fa-bolt"></i>
-NPV Tunnel
-</a>
+<div class="card">
+<i class="fas fa-fire"></i>
+<h3>NPV Tunnel</h3>
+</div>
 
-<a href="ha.html" class="category">
-<i class="fa-solid fa-wifi"></i>
-HA Tunnel
-</a>
+<div class="card">
+<i class="fas fa-wifi"></i>
+<h3>HA Tunnel</h3>
+</div>
 
-<a href="injector.html" class="category">
-<i class="fa-solid fa-download"></i>
-HTTP Injector
-</a>
+<div class="card">
+<i class="fas fa-download"></i>
+<h3>HTTP Injector</h3>
+</div>
 
 </section>
 
-<section class="empty">
+<section class="configs">
 
-<h2>No Configurations Yet</h2>
+<h2>Latest Configurations</h2>
+
+<div id="config-list">
+
+<div class="empty">
+
+<i class="fas fa-folder-open"></i>
+
+<h3>No Configurations Uploaded Yet</h3>
 
 <p>
-Configurations will appear here after the admin uploads them.
+Configurations will appear here after the administrator uploads them.
 </p>
+
+</div>
+
+</div>
 
 </section>
 
-<footer>
+<a
+href="https://whatsapp.com/channel/0029VbBwzzgCcW4h58fHBs3B"
+class="whatsapp">
 
-© 2026 Mr Nonchalant Tech
+<i class="fab fa-whatsapp"></i>
 
-</footer>
+</a>
 
-<script src="app.js"></script>
+<script src="script.js"></script>
 
 </body>
-</html>
+  </html>
