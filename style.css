@@ -12,7 +12,7 @@ body{
     overflow-x:hidden;
 }
 
-/* 🇻🇮 Flag style background layer */
+url("assets/virgin-islands-flag-std.jpg");
 .background{
     position:fixed;
     inset:0;
