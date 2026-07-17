@@ -1,94 +1,235 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-background:#0d1117;
-color:#fff;
+    background:#050505;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
 }
+
+/* 🇻🇮 Flag style background layer */
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url("assets/flag.png");
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
+    filter:brightness(.7);
+}
+
+
+/* HEADER */
 
 header{
-background:#161b22;
-padding:25px;
-text-align:center;
-border-bottom:3px solid #00ff88;
+    width:90%;
+    margin:auto;
+    padding:25px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
 }
 
-header h1{
-color:#00ff88;
-margin-bottom:8px;
+.logo h1{
+    font-family:'Orbitron',sans-serif;
+    letter-spacing:3px;
+    font-size:28px;
+    color:#00ff88;
+    text-shadow:0 0 15px #00ff88;
 }
 
-.top-bar{
-padding:20px;
-text-align:center;
+.logo span{
+    font-size:13px;
+    letter-spacing:5px;
+    color:#aaa;
 }
 
-#search{
-width:90%;
-max-width:500px;
-padding:12px;
-border:none;
-border-radius:8px;
-outline:none;
-font-size:16px;
+
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-#config-container{
-padding:20px;
+nav a{
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    transition:.3s;
 }
 
-.config-card{
-background:#161b22;
-padding:18px;
-margin-bottom:20px;
-border-radius:12px;
-border:1px solid #00ff88;
-transition:.3s;
+nav a:hover{
+    color:#00ff88;
+    text-shadow:0 0 10px #00ff88;
 }
 
-.config-card:hover{
-transform:translateY(-4px);
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:80px 20px 40px;
 }
 
-.config-card h2{
-color:#00ff88;
-margin-bottom:10px;
+.hero h2{
+    font-family:'Orbitron',sans-serif;
+    font-size:35px;
+    color:#00ff88;
+    text-shadow:0 0 20px #00ff88;
 }
 
-.download-btn{
-display:inline-block;
-margin-top:15px;
-padding:10px 20px;
-background:#00ff88;
-color:#000;
-text-decoration:none;
-font-weight:bold;
-border-radius:8px;
+.hero p{
+    margin:15px auto 30px;
+    color:#ccc;
 }
 
-.buttons{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-padding:20px;
+
+.search{
+    display:flex;
+    justify-content:center;
+    max-width:500px;
+    margin:auto;
 }
 
-.buttons a{
-background:#00ff88;
-color:#000;
-padding:12px 18px;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
+.search input{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    background:#111;
+    color:white;
+    border-radius:10px 0 0 10px;
+    border:1px solid #00ff88;
 }
 
-footer{
-text-align:center;
-padding:25px;
-color:#888;
+
+.search button{
+    width:60px;
+    border:none;
+    background:#00ff88;
+    color:black;
+    cursor:pointer;
+    border-radius:0 10px 10px 0;
+}
+
+
+/* CATEGORY CARDS */
+
+.categories{
+    width:90%;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:20px;
+}
+
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(0,255,136,.4);
+    padding:30px 20px;
+    text-align:center;
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+
+.card i{
+    font-size:35px;
+    color:#00ff88;
+    margin-bottom:15px;
+}
+
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px #00ff88;
+}
+
+
+/* CONFIG SECTION */
+
+.configs{
+    width:90%;
+    margin:50px auto;
+}
+
+
+.configs h2{
+    font-family:'Orbitron',sans-serif;
+    color:#00ff88;
+    margin-bottom:25px;
+}
+
+
+#config-list{
+    display:grid;
+    gap:20px;
+}
+
+
+.empty{
+    text-align:center;
+    padding:50px;
+    background:rgba(0,0,0,.5);
+    border-radius:15px;
+    border:1px dashed #00ff88;
+}
+
+
+.empty i{
+    font-size:50px;
+    color:#00ff88;
+    margin-bottom:15px;
+}
+
+
+
+/* WHATSAPP FLOAT */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#00ff88;
+    color:black;
+    font-size:30px;
+    box-shadow:0 0 20px #00ff88;
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+header{
+    justify-content:center;
+    text-align:center;
+}
+
+nav{
+    justify-content:center;
+    margin-top:20px;
+}
+
+.hero h2{
+    font-size:25px;
+}
+
   }
