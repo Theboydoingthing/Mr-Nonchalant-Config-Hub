@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Upload Config - Mr Nonchalant Hub</title>
+<title>Upload Configuration</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -14,10 +14,9 @@
 
 <body>
 
-
 <section class="hero">
 
-<h2>UPLOAD CONFIG</h2>
+<h2>UPLOAD CONFIGURATION</h2>
 
 <p>Share your VPN configuration with the community</p>
 
@@ -33,7 +32,7 @@
 
 
 <div class="search">
-<input id="network" placeholder="Network (MTN, Vodacom, Telkom)">
+<input id="network" placeholder="Network">
 </div>
 
 
@@ -43,12 +42,12 @@
 
 
 <div class="search">
-<input id="link" placeholder="Download Link">
+<input id="file" type="file">
 </div>
 
 
 <button onclick="uploadConfig()">
-UPLOAD
+UPLOAD CONFIG
 </button>
 
 
@@ -69,24 +68,43 @@ serverTimestamp
 window.uploadConfig = async function(){
 
 
+let file =
+document.getElementById("file").files[0];
+
+
+if(!file){
+
+alert("Choose a config file first");
+
+return;
+
+}
+
+
 await addDoc(collection(db,"configs"),{
 
-name: document.getElementById("name").value,
+name:
+document.getElementById("name").value,
 
-type: document.getElementById("type").value,
+type:
+document.getElementById("type").value,
 
-network: document.getElementById("network").value,
+network:
+document.getElementById("network").value,
 
-description: document.getElementById("description").value,
+description:
+document.getElementById("description").value,
 
-link: document.getElementById("link").value,
+fileName:
+file.name,
 
-date: serverTimestamp()
+date:
+serverTimestamp()
 
 });
 
 
-alert("Config uploaded successfully!");
+alert("Configuration uploaded!");
 
 }
 
@@ -96,4 +114,4 @@ alert("Config uploaded successfully!");
 
 </body>
 
-</html>
+  </html>
