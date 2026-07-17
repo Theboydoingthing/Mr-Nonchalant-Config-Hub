@@ -1,36 +1,29 @@
 // Mr Nonchalant Config Hub
-// Configuration System
 
 let configs = JSON.parse(localStorage.getItem("configs")) || [];
-    // Example format:
-    // {
-    //   name: "MTN 500MB Daily",
-    //   type: "TLS Tunnel",
-    //   description: "Fast daily configuration",
-    //   link: "#"
-    // }
-];
-
 
 const configList = document.getElementById("config-list");
 const searchInput = document.querySelector(".search input");
 
 
-// Display configurations
-
 function displayConfigs(items){
 
     configList.innerHTML = "";
+
 
     if(items.length === 0){
 
         configList.innerHTML = `
         <div class="empty">
-            <i class="fas fa-folder-open"></i>
-            <h3>No Configurations Found</h3>
-            <p>
-            Configurations will appear here after upload.
-            </p>
+
+        <i class="fas fa-folder-open"></i>
+
+        <h3>No Configurations Uploaded Yet</h3>
+
+        <p>
+        Upload configurations from the admin panel.
+        </p>
+
         </div>
         `;
 
@@ -40,11 +33,15 @@ function displayConfigs(items){
 
     items.forEach(config => {
 
-        const card = document.createElement("div");
 
-        card.className = "config-card";
+        let card = document.createElement("div");
+
+        card.className = "card";
+
 
         card.innerHTML = `
+
+        <i class="fas fa-file-shield"></i>
 
         <h3>${config.name}</h3>
 
@@ -57,38 +54,41 @@ function displayConfigs(items){
         </p>
 
         <a href="${config.link}" target="_blank">
-        DOWNLOAD
+        DOWNLOAD CONFIG
         </a>
 
         `;
 
+
         configList.appendChild(card);
+
 
     });
 
 }
 
 
-// Search system
 
 searchInput.addEventListener("input",()=>{
 
-    const value = searchInput.value.toLowerCase();
+
+let search = searchInput.value.toLowerCase();
 
 
-    const filtered = configs.filter(config =>
+let filtered = configs.filter(config =>
 
-        config.name.toLowerCase().includes(value) ||
-        config.type.toLowerCase().includes(value)
+config.name.toLowerCase().includes(search) ||
 
-    );
+config.type.toLowerCase().includes(search)
+
+);
 
 
-    displayConfigs(filtered);
+displayConfigs(filtered);
+
 
 });
 
 
-// Load startup
 
 displayConfigs(configs);
