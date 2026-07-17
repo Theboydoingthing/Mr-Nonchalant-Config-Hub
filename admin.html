@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mr Nonchalant Admin Panel</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="hero">
+
+<h2>MR NONCHALANT ADMIN PANEL</h2>
+
+<p>Add new VPN configurations</p>
+
+
+<div class="search">
+
+<input id="name" placeholder="Config name">
+
+</div>
+
+
+<div class="search">
+
+<input id="type" placeholder="Tunnel type">
+
+</div>
+
+
+<div class="search">
+
+<input id="description" placeholder="Description">
+
+</div>
+
+
+<div class="search">
+
+<input id="link" placeholder="Download link">
+
+</div>
+
+
+<button onclick="addConfig()">
+UPLOAD CONFIG
+</button>
+
+
+</div>
+
+
+<script>
+
+function addConfig(){
+
+let config = {
+
+name: document.getElementById("name").value,
+
+type: document.getElementById("type").value,
+
+description: document.getElementById("description").value,
+
+link: document.getElementById("link").value
+
+};
+
+
+localStorage.setItem(
+"config",
+JSON.stringify(config)
+);
+
+
+alert("Configuration saved!");
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
