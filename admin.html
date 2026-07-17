@@ -19,34 +19,26 @@
 
 <h2>MR NONCHALANT ADMIN PANEL</h2>
 
-<p>Add new VPN configurations</p>
+<p>Add and manage VPN configurations</p>
 
 
 <div class="search">
-
-<input id="name" placeholder="Config name">
-
+<input id="name" type="text" placeholder="Config name">
 </div>
 
 
 <div class="search">
-
-<input id="type" placeholder="Tunnel type">
-
+<input id="type" type="text" placeholder="Tunnel type (TLS, NPV, HA...)">
 </div>
 
 
 <div class="search">
-
-<input id="description" placeholder="Description">
-
+<input id="description" type="text" placeholder="Config description">
 </div>
 
 
 <div class="search">
-
-<input id="link" placeholder="Download link">
-
+<input id="link" type="text" placeholder="Download link">
 </div>
 
 
@@ -75,16 +67,39 @@ link: document.getElementById("link").value
 };
 
 
-localStorage.setItem(
-"config",
-JSON.stringify(config)
-);
+if(!config.name || !config.type || !config.link){
 
+alert("Please fill in all required fields");
 
-alert("Configuration saved!");
+return;
 
 }
 
+
+let configs = JSON.parse(localStorage.getItem("configs")) || [];
+
+
+configs.push(config);
+
+
+localStorage.setItem(
+"configs",
+JSON.stringify(configs)
+);
+
+
+alert("Configuration uploaded successfully!");
+
+
+// Clear inputs
+
+document.getElementById("name").value="";
+document.getElementById("type").value="";
+document.getElementById("description").value="";
+document.getElementById("link").value="";
+
+
+}
 
 </script>
 
