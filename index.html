@@ -10,10 +10,7 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -29,33 +26,15 @@
 <header>
 
 <div class="logo">
-
 <h1>MR NONCHALANT</h1>
-
 <span>CONFIG HUB</span>
-
 </div>
 
 
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="#">TLS Tunnel</a>
-
-<a href="#">HTTP Custom</a>
-
-<a href="#">Maya Tunnel</a>
-
-<a href="#">NPV Tunnel</a>
-
-<a href="#">HA Tunnel</a>
-
-<a href="#">HTTP Injector</a>
-
-<a href="upload.html">Upload</a>
-
-</nav>
+<a class="upload-btn" href="upload.html">
+<i class="fas fa-upload"></i>
+UPLOAD CONFIG
+</a>
 
 
 </header>
@@ -64,73 +43,17 @@
 
 <section class="hero">
 
-
-<h2>Premium VPN Configurations</h2>
-
+<h2>VPN CONFIGURATION HUB</h2>
 
 <p>
-Download and share VPN configurations uploaded by the community.
+Upload, share and download VPN configurations.
 </p>
 
 
 <div class="search">
 
+<input id="search" placeholder="Search configs...">
 
-<input 
-type="text"
-placeholder="Search configurations...">
-
-
-<button>
-
-<i class="fas fa-search"></i>
-
-</button>
-
-
-</div>
-
-
-</section>
-
-
-
-<section class="categories">
-
-
-<div class="card">
-<i class="fas fa-shield-alt"></i>
-<h3>TLS Tunnel</h3>
-</div>
-
-
-<div class="card">
-<i class="fas fa-globe"></i>
-<h3>HTTP Custom</h3>
-</div>
-
-
-<div class="card">
-<i class="fas fa-bolt"></i>
-<h3>Maya Tunnel</h3>
-</div>
-
-
-<div class="card">
-<i class="fas fa-fire"></i>
-<h3>NPV Tunnel</h3>
-</div>
-
-
-<div class="card">
-<i class="fas fa-wifi"></i>
-<h3>HA Tunnel</h3>
-</div>
-
-
-<div class="card">
-<i class="fas fa-download"></i>
-<h3>HTTP Injector</h3>
 </div>
 
 
@@ -149,13 +72,9 @@ placeholder="Search configurations...">
 
 <div class="empty">
 
-<i class="fas fa-folder-open"></i>
+<i class="fas fa-spinner"></i>
 
-<h3>Loading Configurations...</h3>
-
-<p>
-Connecting to database...
-</p>
+<h3>Loading configs...</h3>
 
 </div>
 
@@ -167,9 +86,8 @@ Connecting to database...
 
 
 
-<a
-href="https://whatsapp.com/channel/0029VbBwzzgCcW4h58fHBs3B"
-class="whatsapp">
+<a class="whatsapp"
+href="https://whatsapp.com/channel/0029VbBwzzgCcW4h58fHBs3B">
 
 <i class="fab fa-whatsapp"></i>
 
