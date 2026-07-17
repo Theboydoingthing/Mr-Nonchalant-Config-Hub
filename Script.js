@@ -1,7 +1,7 @@
 // Mr Nonchalant Config Hub
 // Configuration System
 
-const configs = [
+let configs = JSON.parse(localStorage.getItem("configs")) || [];
     // Example format:
     // {
     //   name: "MTN 500MB Daily",
